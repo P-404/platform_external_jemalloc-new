@@ -154,15 +154,19 @@ cc_library {
 
     srcs: lib_src_files,
 
+    export_include_dirs: ["include"],
+
     target: {
         android: {
             shared: {
                 enabled: false,
             },
             system_shared_libs: [],
+            header_libs: ["libc_headers"],
         },
         linux_bionic: {
             system_shared_libs: [],
+            header_libs: ["libc_headers"],
         },
     },
 }
